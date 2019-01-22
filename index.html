@@ -50,6 +50,7 @@
 			background:linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 		}
 		.top-image img{
+			position:absolute;
 			display:block;
 			width:100%;
 			margin:0 auto;
@@ -209,6 +210,24 @@
 			text-align:right;
 		}
 
+		.image-inset{
+			opacity:0;
+			transition:opacity 1s, transform 1s;
+		}
+		.image-inset.inset-left{
+			transform:translateX(-20%);
+		}
+		.image-inset.inset-right{
+			transform:translateX(20%);
+		}
+		.image-inset.inset-center{
+			transform:translateY(20%);
+		}
+		.image-inset.show{
+			opacity:1;
+			transform:none;
+		}
+
 
 
 		@media screen and (max-width:1023px){
@@ -228,11 +247,32 @@
 			}
 		}
 	</style>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			function slideInImages(event){
+				var scrollTop = $(window).scrollTop();
+				var scrollBottom = scrollTop+$(window).height();
+				var images = $(".image-inset");
+				images.each(function(){
+					var image = $(this);
+					var imageTop = image.offset().top;
+					var imageBottom = imageTop+image.height();
+					if (scrollBottom>imageTop && scrollTop<imageBottom){
+						window.setTimeout(function(){image.addClass("show");}, 100);
+					}
+				});
+			}
+			$(window).on("scroll", slideInImages);
+		});
+	</script>
 </head>
 
 <body>
 	<div class="top-image">
 		<img src="img/main/01.jpg" alt="A woman undressing." />
+		<div style="padding-top:56.25%"></div>
 	</div>
 
 	<div class="layout">
@@ -287,7 +327,7 @@
 
 				<p>I've agreed not to identify my handler, but she is an older woman with no children of her own, who has worked as a handler since the FBA was first passed into law. At our first meeting in June, she explained my responsibilities to me again, told me about the auditing process I would have to go through, and gave me my Provisional Breeding Licence. If I kept on track for the next 24 months, I was told, I would be given a more permanent licence and would only be audited every five years.</p>
 
-				<p>To pass the first major audit, at the two year mark, I would have to sire 10 children. Of course, it would take a single woman close to a decade &mdash; at least &mdash; to give birth 10 times, so my best chance is clearly to impregnate 10 separate women. Though in 2050&ndash;2055, <em class="highlight">over one in four</em> pregnancies in America have ended in miscarriage, so more likely I would have to impregnate 13 or more women to keep my licence. This was what my handler recommended I aim for.</p>
+				<p>To pass the first major audit, at the two year mark, I would have to sire seven children. Of course, it would take a single woman close to a decade &mdash; at least &mdash; to give birth seven times, so my best chance is clearly to impregnate seven separate women. Though in 2050&ndash;2055, <em class="highlight">over one in four</em> pregnancies in America have ended in miscarriage, so more likely I would have to impregnate nine or more women to keep my licence, all within enough time for them to give birth before June 2057. This was what my handler recommended I aim for.</p>
 
 				<p>It's no wonder the FBA has all but destroyed the concept of getting married to start a family.</p>
 
@@ -445,7 +485,7 @@
 
 				<p>There have been a couple of rough patches, sure, but overall that has been good for me.</p>
 
-				<p class="editor-note">Editor's note: Five months after Melissa Fernley was interviewed, she was convicted of illegally using contraceptive drugs while on the breeding register. She was sentenced to ten months in the breeding wing of San Francisco General Hospital, and is required to regularly take hormone-based fertility and aphrodisiac drugs under supervision for the next five years.</p>
+				<p class="editor-note">Editor's note: Five months after Melissa Fernley was interviewed, she was convicted of illegally using contraceptive drugs while on the breeding register. She was sentenced to 10 months in the breeding wing of San Francisco General Hospital, and is required to regularly take hormone-based fertility and aphrodisiac drugs under supervision for the next five years.</p>
 
 				<hr />
 
@@ -548,7 +588,7 @@
 
 				<p>She hadn't lied about being good at it, and several times she used her hand to show me that I could safely increase my pace or thrust harder.</p>
 
-				<p>It took about ten minutes before I felt confident to thrust into her like this hard and fast enough to bring myself to orgasm. As I grew close, she pressed a fingertip against my anus, which I will readily admit I enjoyed.</p>
+				<p>It took about 10 minutes before I felt confident to thrust into her like this hard and fast enough to bring myself to orgasm. As I grew close, she pressed a fingertip against my anus, which I will readily admit I enjoyed.</p>
 
 				<p>She had warned me before we started that I should pull out before I ejaculated so it would go into her mouth instead of potentially down her windpipe, but I confess in the moment I forgot this until after I started to ejaculate mid-thrust and instinctively pushed myself as deep inside her as I could manage.</p>
 
@@ -562,43 +602,90 @@
 
 				<p><b>Matthew Gladstone:</b> Hi Ocean, thanks for agreeing to speak with me today. I start each of these interviews by asking how the Fertility Benefit Act has affected your life, but in your case it's a little more complicated. Could you please tell me how both the Fertility Breeding Act here in America and China's Breeding Policy have affected your life?</p>
 
+				<p><b>Ocean Liu:</b> Hello Matthew. Before we start, I would just like to say thank you very much for this interview. My experiences with China's Breeding Policy have had a very strong effect on my life, both in China and here in America, so I hope you don't mind if it's quite a long answer.</p>
+
+				<p><b>MG:</b> Not at all, please go on.</p>
+
 				<div class="image-inset inset-left">
 					<img src="img/ocean-liu/01.jpg" alt="Ocean Liu" />
 					<span class="image-caption">Photo: Ocean Liu</span>
 				</div>
 
-				<p><b>Ocean Liu:</b> Hello Matthew. Before we start, I would just like to say thank you very much for this interview.</p>
+				<p><b>OL:</b> Okay. Although I have spent longer living under the rules of the FBA, my life has been influenced much more by China's Breeding Policy. Growing up in China, every girl is taken from her home after she turns 16, and made to go to a breeding camp. Life there is very strict, I suppose it is similar to attending boarding school. While you are there they continue your education, you wear a uniform, and you sleep and eat with the other girls.</p>
 
-				<p>My life has been influenced most of all by China's Breeding Policy, though I have spent longer living under the rules of the FBA. Growing up in China, every girl is taken from her home and made to go to a breeding camp when she turns 16. Life there is very strict. In part I suppose it is like a boarding school, in that they continue your education, you wear a uniform, and you sleep and eat with the other girls. But in another way it is like being conscripted into an army. You spend a year at that camp, and in that time they train you to be the best breeder you can possibly be. They control your diet, and your daily routine involves an exercise regime as well as a set of drugs they make you take. They never told us what the drugs were for, but from the way we changed at that camp we all thought they were for helping us maintain an ideal weight and for increasing libido. I suppose they probably were also aimed at improving our fertility.</p>
+				<p>But in another way it is like being conscripted into an army. You spend a year at that camp, and in that time they train you to be the best breeder you can possibly be. They control your diet, put you through a tough exercise regime every day, and make you take a lot of pills and injections.</p>
 
-				<p>After a year, when you turn 17, they move you to another camp. When I was taken to my second camp, I didn't know anyone there, and I was given very little opportunity to change that. This was the breeding camp, which they had spent the previous year preparing us for. Unlike the previous camp, here we were given our own rooms. We ate and slept there, and the only time in which I could interact with any of the other girls at the camp was during the morning exercise routine. But after that, we were confined to our rooms for the remainder of the day.</p>
+				<p>They never told us what the drugs were for, but from the way we changed at that camp we all thought they were for helping us maintain an ideal weight and for increasing libido. I suppose they probably were also aimed at improving our fertility.</p>
 
-				<p>I knew what this camp would be, of course. China has breeding camps spread throughout the country, and my father had frequented our local breeding camp while I was growing up. Just as girls know it will be their duty to spend time in one of these camps, men are taught it is their duty to visit these camps as often as they can through their whole adult life. Every day while I was there, men would come to my room to breed me. After each one, I was given 15 minutes to clean myself up for the next man, until dinner was delivered to me at nine o'clock in the evening.</p>
+				<p>After a year, when you are 17, they move you to another camp. When I was taken to my second camp, I didn't know anyone there, and I was given very little opportunity to speak with the other girls there. This was the breeding camp, which they had spent the previous year preparing us for. Unlike the first camp, here we were given our own rooms. We ate and slept there, and the only time in which I could interact with any of the other girls at the camp was during the morning exercise routine. But after that, we were confined to our rooms for the remainder of the day.</p>
 
-				<p>Everyone had to stay at this camp for a year, unless they became pregnant. It was explained to me that, if I was found to be pregnant, I would be taken to another camp for a year before returning here to start my year of breeding service again. This is how China ensures the most fertile women are able to continue being bred for the longest. I did not get pregnant during my year here, but I saw many women who I think would have been in their thirties or even forties during the group exercise every morning so clearly it must work.</p>
+				<p>Everyone had to stay at this camp for a year, unless they became pregnant. It was explained to me that, if I was found to be pregnant, I would be taken to another camp for a year before returning here to start my year of breeding service again. This is how China ensures the most fertile women are able to continue being bred for the longest. I did not get pregnant during my year here, but I saw many women who I think would have been in their thirties or even forties during the group exercise every morning, so clearly it must work.</p>
 
-				<p>Because I did not get pregnant, on my 18th birthday I was returned to my family home. Re-integration was&hellip; difficult. For the past two years I had been trained and conditioned that my interactions with men would all be sexual, and my libido was still very high from the camp's drug regimen. On several occasions during my first few months back I presented myself to my father without fully realising what I was doing. My mother was very worried by this, and encouraged me to travel to America to live with her sister until I could break this conditioning.</p>
+				<p>Because I did not get pregnant, after I turned 18 I was returned to my family home. Re-integration was&hellip; difficult. For the past two years I had been trained and conditioned that my interactions with men would all be sexual, and my libido was still very high from the camp's drug regimen. On several occasions during my first few months back I presented myself to my father without thinking about what I was doing. My mother was very worried by this, and encouraged me to travel to America to live with her sister until I could break this conditioning.</p>
 
-				<p>My mother chaperoned me to my aunt's house here in Houston. It was a difficult and embarrassing journey. My mother had puchased a chastity belt to protect me, but when we arrived in America the metal in it set off security alerts. I remember this encounter very clearly, because of how incredibly embarrassing it was. They patted me down, then took me to a private room when I refused to remove the bulky item around my pubic area. There, they made me remove my pants to see what it was. They tried to speak to me for a long time but I understood very little, until finally another guard entered the room with my mother's key and gave it to me. I removed the chastity belt.</p>
+				<div class="image-inset inset-center">
+					<img src="img/ocean-liu/07.jpg" alt="Ocean Liu" />
+					<span class="image-caption">Photo: Adam Zhen</span>
+				</div>
+
+				<p>My mother chaperoned me to my aunt's house here in Houston. It was a difficult and embarrassing journey. My mother had puchased a chastity belt to protect me, but when we arrived in America the metal in it set off security alerts. I remember this encounter very clearly, because of how incredibly embarrassing it was. They patted me down, then took me to a private room when I refused to remove the bulky item around my pubic area. There, they made me remove my pants to see what it was. They tried to speak to me for a long time but I understood very little English then. It wasn't until another guard finally entered the room with my mother's key and gave it to me that I could remove the chastity belt.</p>
 
 				<p>Standing there with my bottom half naked and two of the guards in the room being men, I had an overwhelming urge to present myself to them. So, I did. They seemed shocked, but conversed and eventually the woman and one of the men left the room. The man who was still there showed me a card, and I could read English better than I could understand it so I did recognise the words "FBA", though at the time I didn't know what that meant.</p>
 
-				<p>In the camps in China, we are taught to present ourselves to men by turning away from them and bending forwards. When he took his penis out, my conditioning took over and I immediately presented myself to him, and he had sex with me there in that stall before eventually returning me to my mother. I could tell she was very upset, but she didn't ask me what had happened.</p>
+				<p>He had sex with me there in that room before eventually returning me to my mother. I could tell she was very upset, but she didn't ask me what had happened.</p>
 
-				<div class="image-inset inset-right">
+				<p>So that is how I arrived in America. My mother delivered me to my aunt's home before she left home, and there my aunt started trying to untrain my conditioning from the breeding camp. Before very long, though, I started showing signs of pregnancy.</p>
+
+				<p>There was a lot of discussion in my family around if I should stay in America, knowing I would be made to join the breeding register if I remained, or if I should return to China where I would likely struggle to overcome my conditioning.</p>
+
+				<p>In the end, I made the decision to stay. I wanted do my best to use what I had learned in China to be a very good breeder under the American system.</p>
+
+				<p>I guess the rest is history? That was the first of three successful pregnancies I have carried here. A few years ago I met Adam for the first time when he came to breed me, and we fell in love.</p>
+
+				<p><b>MG:</b> It's very interesting that, over a year in a breeding camp, you didn't get pregnant. But then after your first sexual encounter in America you were successfully bred. What do you put this down to?</p>
+
+				<p><b>OL:</b> I think the reason is the men. In China, every man is told to breed and every woman is told to breed. Here in America, only some men are told to breed, and they have to be tested for fertility. I think that almost all of the men who tried to breed me in my room in the camp would have been infertile, but the man with the breeding licence in the airport would have been fertile.</p>
+
+				<p><b>MG:</b> It sounds like you think China might benefit from following a more American model, then?</p>
+
+				<div class="image-inset inset-left">
 					<img src="img/ocean-liu/06.jpg" alt="Ocean Liu" />
 					<span class="image-caption">Photo: Adam Zhen</span>
 				</div>
 
-				<p>So that is how I arrived in America. My mother delivered me to my aunt's home before she left home, and there my aunt started trying to untrain my conditioning from the breeding camp. Before very long, though, I started showing signs of pregnancy. There was a lot of discussion around if I should stay in America, knowing I would be made to join the breeding register, or if I should return to China where I would likely struggle to overcome my conditioning.</p>
+				<p><b>OL:</b> Well, in one respect. I think the way they encourage every man to breed, even though almost all of them are infertile, is a bad decision. But there are less fertility problems in women and China is very good at turning us into good breeders.</p>
 
-				<p>In the end, I decided. I would do my best to use what I had learned in China to be a very good breeder under the American system.</p>
+				<p>America has lots of advertising telling women to join the breeding register, but most never will. I know some are made to join because they get pregnant, but realistically this is very rare. I think America can learn more from China than we can learn from America, in that it needs to make more effort to teach girls to be good breeders.</p>
 
-				<p>I guess the rest is history? That was the first of three successful pregnancies I have carried here. A few years ago I met Adam for the first time when he came to breed me, and we fell in love.</p>
+				<p>You were telling me before the interview how the breeding system here has felt like it is separate to your life. That is the problem &mdash; people can step aside from it. It would be better for Americans to see breeding as their duty, instead of something to choose if it suits them.</p>
 
-				<p>[Interview to be continued]</p>
+				<p><b>MG:</b> It's interesting to hear you say that. Now that you've been living in America for 16 years, I'm sure you've seen just how much of a cultural shift we have seen in this area. We've seen this, for example, with the unretirement amendment 12 years ago and the pervert's incentive amendment nine years ago. Some states have proposed laws for pre-registration of girls who are under 18, so they will automatically join the register once they are old enough. Do you think this cultural shift has been moving, and is continuing to move, in the right direction?</p>
+
+				<p><b>OL:</b> Hmm, this is a hard question. One thing that I have certainly noticed here in America that was not the case in China is how much men here desire blowjobs and anal sex. In China, everyone knows that it is our duty to breed. In America, I think many men with a licence see it as a license to have sex more than a licence to breed, and just that they have to breed so they can keep it.</p>
+
+				<p>The pervert's amendment is the perfect example of this, and I think it was a bad idea. It focuses on the men, but like I said earlier having more men is not the answer. America needs to focus on teaching its young women to be breeders, and to move away from this fascination with non-breeding sex.</p>
 
 				<p class="editor-note">Editor's note: The above interview has been edited for clarity. Due to a medical emergency, Kyle Douglas was unavailable to chaperone intercourse between Ocean Liu and Matthew Gladstone, so they did not have sex after their interview as originally intended.</p>
+			</section>
+
+			<hr />
+
+			<section>
+				<p>It's only been seven months since I gained my licence, so I haven't yet ticked off any of the requirements of my audit. I hadn't realised just how anxiety-inducing these first months of being licenced would be, where I know my responsibilities but have now way yet to know if I am meeting them.</p>
+
+				<p>At first, my ability to work while fulfilling my responsibilities as a licenced breeder were helped but us hiring a woman on the register to clean our home and cook meals for us, but once she became pregnant I knew that continuing to have sex with her would not help me hit my audit targets. The same story has been repeated with each of the women with whom I have had any sort of breeding arrangement, and in each case I can only hope that their pregnancy was my doing.</p>
+
+				<p>I had hoped, perhaps, that my working on this article might help me out, but as you will surely have realised by now I didn't have any opportunity to impregnate the women I interviewed here. The irony is not lost on me.</p>
+
+				<p>The journey has also been difficult for my wife. Though she has long wanted us to have a child of our own, she does not want to join the breeding register so can't risk getting pregnant. We had assumed, given my family history, that I was infertile, but when I was granted my licence that changed things for us. As a man with a breeding licence, I'm legally prohibited from using any contraceptives. Which wouldn't be a problem if we didn't also live in Virginia.</p>
+
+				<p>Unlike most states, here in Virginia birth control is outlawed for everyone, regardless of whether or not you are part of the breeding system under the FBA. So if my wife and I are to have sex, we risk either prison or making her a breeder for life.</p>
+
+				<p>My wife has accepted that I have a responsibility, as a fertile man, to breed as many women as possible. But it has been more difficult to accept that, unless we mean to risk prison or servitude, our sex life has been relegated to oral or anal sex only. I hope it will not be the case for us, but again this only makes me think of how the FBA has destroyed historic ideas of what it meant to be a family in America.</p>
+
+				<p>There is a silver lining, however. It is thanks to the incentives and strictures of the FBA that we do not have the aging &mdash; and dying &mdash; population seen in those more liberal nations that refused to implement a breeding programme after the fertility collapse. And for all the damage the FBA might have done, it still has not entirely killed the dream of a family.</p>
+
+				<p>My wife and I now hope that, one day, we might be able to adopt a child that I have sired.</p>
 			</section>
 		</article>
 	</div>
