@@ -16,7 +16,7 @@
 			--inset-gutter:40px;
 			--inset-min-width:0%;
 			--inset-max-width:65%;
-			--inset-max-width-small:300px;
+			--inset-max-width-quote:400px;
 		}
 
 		*{
@@ -34,6 +34,19 @@
 			position:absolute;
 			top:20px;
 			left:20px;
+		}
+
+		.brand{
+			color:#991f80;
+		}
+
+		.signoff{
+			display:inline-block;
+			margin-left:5px;
+			vertical-align:middle;
+			height:25px;
+			border-radius:100%;
+			box-shadow:0 0 5px 5px rgba(0, 0, 0, 0.2);
 		}
 
 		.top-image{
@@ -109,24 +122,25 @@
 			height:1px;
 			margin:40px 0;
 			border:none;
-			background:linear-gradient(to left, #ffffff 0%, #ffffff 10%, #cccccc 40%, #cccccc 60%, #ffffff 90%, #ffffff 100%);
+			background:linear-gradient(to left, #ffffff 0%, #ffffff 10%, #991f80 40%, #991f80 60%, #ffffff 90%, #ffffff 100%);
 			position:relative;
 			overflow:visible;
 		}
 
 		.highlight{
 			font-style:inherit;
-			background:#ddffe3;
+			background:#ffd0f6;
+			transition:background 0.3s;
 		}
 		.highlight:hover{
-			background:#bbffcc;
+			background:#ffb5f1;
 		}
 
 		.image-caption{
 			display:block;
 			padding-top:10px;
 			padding-bottom:10px;
-			border-bottom:1px solid #cccccc;
+			border-bottom:1px solid #991f80;
 			font-style:italic;
 			font-size:14px;
 			line-height:20px;
@@ -160,7 +174,7 @@
 			max-width:var(--inset-max-width);
 		}
 		.inset-left.pullquote-inset{
-			max-width:var(--inset-max-width-small);
+			max-width:var(--inset-max-width-quote);
 		}
 
 		.inset-right{
@@ -171,7 +185,7 @@
 			max-width:var(--inset-max-width);
 		}
 		.inset-right.pullquote-inset{
-			max-width:var(--inset-max-width-small);
+			max-width:var(--inset-max-width-quote);
 		}
 
 		.inset-center{
@@ -179,11 +193,8 @@
 			margin-right:calc(-1*var(--inset-breakout));
 		}
 		.inset-center.pullquote-inset blockquote{
-			max-width:calc(2*var(--inset-max-width-small));
+			max-width:var(--inset-max-width-quote);
 			margin:0 auto;
-		}
-		.inset-center.pullquote-inset.small blockquote{
-			max-width:calc(1.5*var(--inset-max-width-small))
 		}
 		.inset-center img{
 			margin:0 auto;
@@ -199,15 +210,13 @@
 
 		.pullquote-inset{
 			margin-bottom:20px;
-			font-size:30px;
-		}
-		.pullquote-inset.small{
 			font-size:16px;
 		}
 		.pullquote-inset blockquote{
-			padding:0;
-			margin:0;
-			border-top:1px solid #cccccc;
+			padding:10px 20px 20px;
+			border-top:3px solid #991f80;
+			background:#ffd0f6;
+			border-radius:0 0 20px 20px;
 		}
 		.pullquote-inset blockquote p{
 			text-align:left;
@@ -299,7 +308,7 @@
 
 				<p>Full disclosure: Matthew Gladstone had sex with each of these women after interviewing them, unless stated otherwise. He was chaperoned in each case by photographer Kyle Douglas, who does not have a breeding licence.</p>
 
-				<p>&mdash; Accept Editor, Erica Lockwood</p>
+				<p><span class="brand">&mdash;</span> Accept Editor, Erica Lockwood</p>
 			</div>
 
 			<section>
@@ -551,7 +560,7 @@
 
 				<p><b>MG:</b> That's the year the "Pervert's Incentive" Amendment was passed.</p>
 
-				<div class="pullquote-inset small inset-center">
+				<div class="pullquote-inset inset-center">
 					<blockquote>
 						<p>The Sexual Acts Amendment 2047, widely known as the "Pervert's Incentive" Amendment, changed the FBA so that instead of registered breeders being required to "comply with requests for intercourse" from breeding licence holders, they would have to "comply with any sexual request".</p>
 					</blockquote>
@@ -701,7 +710,7 @@
 
 				<p>There is a silver lining, however. It is thanks to the incentives and strictures of the FBA that we do not have the aging &mdash; and dying &mdash; population seen in those more liberal nations that refused to implement a breeding programme after the fertility collapse. And for all the damage the FBA might have done, it still has not entirely killed the dream of a family.</p>
 
-				<p>My wife and I now hope that, one day, we might be able to adopt a child that I have sired.</p>
+				<p>My wife and I now hope that, one day, we might be able to adopt a child that I have sired <img class="signoff" src="../img/heart.svg" /></p>
 			</section>
 		</article>
 	</div>
