@@ -1,0 +1,255 @@
+:root{
+	--layout-width:600px;
+	--layout-gutter:20px;
+	--inset-breakout:300px;
+	--inset-gutter:40px;
+	--inset-min-width:0%;
+	--inset-max-width:65%;
+	--inset-max-width-quote:400px;
+}
+
+*{
+	box-sizing:border-box;
+}
+
+html, body{
+	margin:0;
+	padding:0;
+	font-family:Georgia, Arial, Serif;
+	color:#333333;
+}
+
+.logo{
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+
+.brand{
+	color:#991f80;
+}
+
+.signoff{
+	display:inline-block;
+	margin-left:10px;
+	vertical-align:middle;
+	height:25px;
+	border-radius:100%;
+	box-shadow:0 0 5px 5px rgba(153, 31, 128, 0.15);
+}
+
+.top-image{
+	position:relative;
+	max-height:700px;
+	overflow:hidden;
+}
+.top-image::after{
+	content:"";
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:400px;
+	pointer-events:none;
+	background:linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.top-image img{
+	position:absolute;
+	display:block;
+	width:100%;
+	margin:0 auto;
+}
+
+.layout{
+	max-width:calc(var(--layout-width) + 2*var(--layout-gutter) + 2*var(--inset-breakout));
+	margin:0 auto;
+	padding:60px calc(var(--inset-breakout) + var(--layout-gutter)) 60px;
+}
+
+.editor-note,
+.article-info{
+	font-style:italic;
+	font-size:16px;
+	line-height:24px;
+}
+
+.article-info{
+	display:block;
+	margin:40px 0;
+}
+.article-info p{
+	margin-bottom:0;
+}
+
+article{
+	position:relative;
+	margin-top:60px;
+	font-size:18px;
+	line-height:1.8;
+}
+
+article section:first-of-type > p:first-child::first-letter{
+	float:left;
+	font-size:68px;
+	line-height:64px;
+	padding-right:5px;
+}
+
+article p{
+	margin:0 0 20px;
+	text-align:justify;
+}
+
+article img{
+	display:block;
+	max-width:100%;
+}
+
+article hr{
+	clear:both;
+	display:block;
+	height:1px;
+	margin:40px 0;
+	border:none;
+	background:linear-gradient(to left, #ffffff 0%, #ffffff 10%, #991f80 40%, #991f80 60%, #ffffff 90%, #ffffff 100%);
+	position:relative;
+	overflow:visible;
+}
+
+.highlight{
+	font-style:inherit;
+	background:#ffd0f6;
+	transition:background 0.3s;
+}
+.highlight:hover{
+	background:#ffb5f1;
+}
+
+.image-caption{
+	display:block;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #991f80;
+	font-style:italic;
+	font-size:14px;
+	line-height:20px;
+}
+
+h1{
+	font-size:80px;
+	line-height:1.2;
+	margin-top:-300px;
+	margin-bottom:40px;
+	margin-left:calc(-1*var(--inset-breakout));
+	margin-right:calc(-1*var(--inset-breakout));
+	text-align:center;
+}
+@media screen and (max-width:767px){
+	h1{
+		font-size:50px;
+	}
+}
+
+h2{
+	font-size:40px;
+	margin-bottom:20px;
+}
+
+.inset-left{
+	float:left;
+	margin-right:var(--inset-gutter);
+	margin-left:calc(-1*var(--inset-breakout));
+	min-width:var(--inset-min-width);
+	max-width:var(--inset-max-width);
+}
+.inset-left.pullquote-inset{
+	max-width:var(--inset-max-width-quote);
+}
+
+.inset-right{
+	float:right;
+	margin-left:var(--inset-gutter);
+	margin-right:calc(-1*var(--inset-breakout));
+	min-width:var(--inset-min-width);
+	max-width:var(--inset-max-width);
+}
+.inset-right.pullquote-inset{
+	max-width:var(--inset-max-width-quote);
+}
+
+.inset-center{
+	margin-left:calc(-1*var(--inset-breakout));
+	margin-right:calc(-1*var(--inset-breakout));
+}
+.inset-center.pullquote-inset blockquote{
+	max-width:var(--inset-max-width-quote);
+	margin:0 auto;
+}
+.inset-center img{
+	margin:0 auto;
+}
+
+.image-inset{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.image-inset img{
+	margin:0 auto;
+}
+
+.pullquote-inset{
+	margin-bottom:20px;
+	font-size:16px;
+}
+.pullquote-inset blockquote{
+	padding:10px 20px 20px;
+	border-top:3px solid #991f80;
+	background:#ffd0f6;
+	border-radius:0 0 20px 20px;
+}
+.pullquote-inset blockquote p{
+	text-align:left;
+}
+.pullquote-inset blockquote p:last-child{
+	margin-bottom:0;
+}
+.pullquote-inset.inset-right blockquote p{
+	text-align:right;
+}
+
+.image-inset{
+	opacity:0;
+	transition:opacity 1s, transform 1s;
+}
+.image-inset.inset-left{
+	transform:translateX(-20%);
+}
+.image-inset.inset-right{
+	transform:translateX(20%);
+}
+.image-inset.inset-center{
+	transform:translateY(20%);
+}
+.image-inset.show{
+	opacity:1;
+	transform:none;
+}
+
+
+
+@media screen and (max-width:1023px){
+	:root{
+		--inset-breakout:30px;
+		--inset-max-width:40%;
+	}
+}
+
+@media screen and (max-width:767px){
+	:root{
+		--layout-gutter:20px;
+		--inset-breakout:0px;
+		--inset-gutter:0;
+		--inset-min-width:100%;
+		--inset-max-width:100%;
+	}
+}
