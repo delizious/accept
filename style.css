@@ -6,6 +6,8 @@
 	--inset-min-width:0%;
 	--inset-max-width:65%;
 	--inset-max-width-quote:400px;
+	--brand:#991f80;
+	--brand-text:#58114a;
 }
 
 *{
@@ -17,16 +19,13 @@ html, body{
 	padding:0;
 	font-family:Georgia, Arial, Serif;
 	color:#333333;
+	overflow-x:hidden;
 }
 
 .logo{
 	position:absolute;
 	top:20px;
 	left:20px;
-}
-
-.brand{
-	color:#991f80;
 }
 
 .signoff{
@@ -73,9 +72,15 @@ html, body{
 	line-height:24px;
 }
 
+.editor-note cite::before {
+	content:"\2014";
+	margin-right:10px;
+	color: var(--brand);
+}
+
 .article-info{
 	display:block;
-	margin:40px 0;
+	margin:20px 0;
 }
 .article-info p{
 	margin-bottom:0;
@@ -90,7 +95,7 @@ article{
 
 article section:first-of-type > p:first-child::first-letter{
 	float:left;
-	font-size:68px;
+	font-size:60px;
 	line-height:64px;
 	padding-right:5px;
 }
@@ -111,7 +116,7 @@ article hr{
 	height:1px;
 	margin:40px 0;
 	border:none;
-	background:linear-gradient(to left, #ffffff 0%, #ffffff 10%, #991f80 40%, #991f80 60%, #ffffff 90%, #ffffff 100%);
+	background:linear-gradient(to left, #ffffff 0%, #ffffff 10%, var(--brand) 40%, var(--brand) 60%, #ffffff 90%, #ffffff 100%);
 	position:relative;
 	overflow:visible;
 }
@@ -129,7 +134,7 @@ article hr{
 	display:block;
 	padding-top:10px;
 	padding-bottom:10px;
-	border-bottom:1px solid #991f80;
+	border-bottom:1px solid var(--brand);
 	font-style:italic;
 	font-size:14px;
 	line-height:20px;
@@ -146,13 +151,27 @@ h1{
 }
 @media screen and (max-width:767px){
 	h1{
-		font-size:50px;
+		font-size:40px;
+		margin-top:-200px;
+		margin-bottom:20px;
+		text-align:left;
 	}
 }
 
 h2{
 	font-size:40px;
 	margin-bottom:20px;
+}
+h2:after{
+	content:"";
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	border-bottom:1px solid var(--brand);
+}
+h1, h2{
+	position:relative;
 }
 
 .inset-left{
@@ -203,7 +222,7 @@ h2{
 }
 .pullquote-inset blockquote{
 	padding:10px 20px 20px;
-	border-top:3px solid #991f80;
+	border-top:3px solid var(--brand);
 	background:#ffd0f6;
 	border-radius:0 0 20px 20px;
 }
@@ -230,7 +249,7 @@ h2{
 .image-inset.inset-center{
 	transform:translateY(20%);
 }
-.image-inset.show{
+.image-inset.show,.image-inset.inset-right.show *{
 	opacity:1;
 	transform:none;
 }
