@@ -59,10 +59,17 @@ html, body{
 	margin:0 auto;
 }
 
-.layout{
+.top-image + article {
+	margin-top:-300px;
+}
+
+article{
 	max-width:calc(var(--layout-width) + 2*var(--layout-gutter) + 2*var(--inset-breakout));
-	margin:0 auto;
+	margin:60px auto 0;
 	padding:60px calc(var(--inset-breakout) + var(--layout-gutter)) 60px;
+	position:relative;
+	font-size:18px;
+	line-height:1.8;
 }
 
 .editor-note,
@@ -84,13 +91,6 @@ html, body{
 }
 .article-info p{
 	margin-bottom:0;
-}
-
-article{
-	position:relative;
-	margin-top:60px;
-	font-size:18px;
-	line-height:1.8;
 }
 
 article section:first-of-type > p:first-child::first-letter{
@@ -143,7 +143,7 @@ article hr{
 h1{
 	font-size:80px;
 	line-height:1.2;
-	margin-top:-300px;
+	margin-top:0;
 	margin-bottom:40px;
 	margin-left:calc(-1*var(--inset-breakout));
 	margin-right:calc(-1*var(--inset-breakout));
