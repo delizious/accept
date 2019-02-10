@@ -59,8 +59,10 @@ html, body{
 	margin:0 auto;
 }
 
-.top-image + article {
-	margin-top:-300px;
+@media screen and (min-width:768px){
+	.top-image + article {
+		margin-top:-300px;
+	}
 }
 
 article{
@@ -86,12 +88,23 @@ article{
 }
 
 .article-info{
-	display:block;
+	display:flex;
+	align-items:center;
 	margin:20px 0;
 }
 .article-info p{
 	margin-bottom:0;
 }
+
+.author-pic{
+	display:block;
+	width:100px;
+	height:100px;
+	border-radius:100px;
+	border:2px solid var(--brand);
+	margin-right:20px;
+}
+.article-info-inner {}
 
 article section:first-of-type > p:first-child::first-letter{
 	float:left;
@@ -154,7 +167,6 @@ h1{
 		font-size:40px;
 		margin-top:-200px;
 		margin-bottom:20px;
-		text-align:left;
 	}
 }
 
