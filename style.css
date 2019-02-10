@@ -110,12 +110,21 @@ article{
 }
 
 article .author-pic {
+	clear:right;
 	float:left;
+	margin-bottom:20px;
+}
+article .author-pic + p {
+	clear: right;
 }
 article .author-pic-right {
+	clear:left;
 	float:right;
 	margin-right:0;
 	margin-left:20px;
+}
+article .author-pic-right + p {
+	clear:left;
 }
 
 article section:first-of-type > p:first-child::first-letter{
