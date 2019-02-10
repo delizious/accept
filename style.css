@@ -95,6 +95,7 @@ article{
 	align-items:center;
 	margin:20px 0;
 }
+.article-info-inner {}
 .article-info p{
 	margin-bottom:0;
 }
@@ -107,7 +108,15 @@ article{
 	border:2px solid var(--brand);
 	margin-right:20px;
 }
-.article-info-inner {}
+
+article .author-pic {
+	float:left;
+}
+article .author-pic-right {
+	float:right;
+	margin-right:0;
+	margin-left:20px;
+}
 
 article section:first-of-type > p:first-child::first-letter{
 	float:left;
