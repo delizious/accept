@@ -453,3 +453,24 @@ h1, h2{
 	font-size:50px;
 	margin:0;
 }
+
+.link-home{
+	position:fixed;
+	z-index:1;
+	top:40px;
+	left:40px;
+	display:block;
+}
+
+.link-home img{
+	display:block;
+	height:25px;
+	border-radius:100%;
+	box-shadow:0 0 5px 5px rgba(153, 31, 128, 0.15);
+	opacity:0.5;
+	transition:all 0.3s;
+}
+
+.link-home:hover img{
+	opacity:1;
+}
