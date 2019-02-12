@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var image = $('.homepage-top-image');
-	var number = Math.ceil(Math.random()*15);
+	var number = Math.ceil(Math.random()*17);
 	if (number < 10) {
 		number = '0' + number;
 	}
