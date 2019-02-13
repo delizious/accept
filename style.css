@@ -352,11 +352,9 @@ h1, h2{
 }
 @keyframes homepage-image-fade-in{
 	0%{
-		filter:blur(10px);
 		opacity:0;
 	}
 	100%{
-		filter:blur(1px);
 		opacity:0.2;
 	}
 }
@@ -433,7 +431,6 @@ h1, h2{
 	object-fit:cover;
 	object-position:50% 50%;
 	opacity:0.6;
-	filter:blur(3px);
 }
 .article-box-inside{
 	position:absolute;
