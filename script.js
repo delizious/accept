@@ -12,6 +12,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-	$(window).on("scroll", slideInImages);
+	// $(window).on("scroll", slideInImages); This stopped working??
+	window.setInterval(slideInImages, 500);
 	slideInImages();
 });
